@@ -30,7 +30,7 @@ $insert = "
 $stmt = Connection::getInstance()->prepare($insert);
 $stmt->bindValue(1, 'Statement', PDO::PARAM_STR);
 $stmt->bindValue(2, 'Bind Value', PDO::PARAM_STR);
-$stmt->bindValue(3, 'test.doe@mail.com', PDO::PARAM_STR);
+$stmt->bindValue(3, 'test.doe.bind.value@mail.com', PDO::PARAM_STR);
 $stmt->bindValue(4, '000', PDO::PARAM_STR);
 
 $stmt->execute();
@@ -46,7 +46,7 @@ $insert = "
 $stmt = Connection::getInstance()->prepare($insert);
 $stmt->bindValue(':first_name', 'Statement', PDO::PARAM_STR);
 $stmt->bindValue(':last_name', 'Bind Value link names', PDO::PARAM_STR);
-$stmt->bindValue(':email', 'test.doe@mail.com', PDO::PARAM_STR);
+$stmt->bindValue(':email', 'test.doe.link.name@mail.com', PDO::PARAM_STR);
 $stmt->bindValue(':document', '001', PDO::PARAM_STR);
 
 $stmt->execute();
@@ -61,7 +61,7 @@ $insert = "
 
 $firstName = 'Statement';
 $lastName = 'Bind Param';
-$email = 'test.doe@mail.com';
+$email = 'test.doe.bind.param@mail.com';
 $document = '002';
 
 $stmt = Connection::getInstance()->prepare($insert);
@@ -84,7 +84,7 @@ $insert = "
 $user = [
   'first_name' => 'Statement',
   'last_name' => 'Exec array',
-  'email' => 'test.doe@mail.com',
+  'email' => 'test.doe.exec.array@mail.com',
   'document' => '003',
 ];
 

@@ -10,18 +10,13 @@ fullStackPHPClassName('Transactions');
 
 fullStackPHPClassSession('transaction', __LINE__);
 
-$insert = "
-    insert into users (first_name, last_name, email, document)
-    values ('Albert', 'Doe', 'albert.doe@mail.com', '0000000011');
-";
-
 try {
     $pdo = Connection::getInstance();
     $pdo->beginTransaction();
 
     $pdo->query("
         insert into users (first_name, last_name, email, document)
-        values ('Albert', 'Doe', 'albert.doe@mail.com', '0000000011');
+        values ('Albert', 'Doe', 'albert.transactiondoe@mail.com', '0000000011');
     ");
 
     $userId = $pdo->lastInsertId();
